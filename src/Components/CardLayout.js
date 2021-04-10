@@ -8,6 +8,7 @@ import CardContent from '@material-ui/core/CardContent';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import compose from 'recompose/compose';
 import withWidth from '@material-ui/core/withWidth';
+import { requirePropFactory } from '@material-ui/core';
 
 const styleSheet = (theme) => ({
     content: theme.mixins.gutters({
@@ -45,9 +46,8 @@ const styleSheet = (theme) => ({
         lineHeight: 1.5
     },
     card: {
-        boxShadow: '0 0 0.5em 0 rgba(236, 236, 236, 0.5)',
-        maxHeight: '100%',
-        overflow: 'auto',
+        // boxShadow: '0 0 0.5em 0 rgba(236, 236, 236, 0.5)',
+        // maxHeight: '100%',
         marginTop: '80px',
         backgroundColor: '#b266b9',
         flex: 1,
@@ -57,6 +57,21 @@ const styleSheet = (theme) => ({
         alignItems: 'center',
         height: '200px',
         borderRadius: '20px'
+    },
+    progressStyle:{
+        // boxShadow: '0 0 0.5em 0 rgba(236, 236, 236, 0.5)',
+        // maxHeight: '100%',
+        overflow: 'auto',
+        marginTop: '150px',
+        backgroundColor: 'ghostwhite',
+        flex: 1,
+        margin: '50px 50px',
+        display: 'flex',
+        flexDirection: 'row',
+        // alignItems: 'center',
+        height: '300px',
+        borderRadius: '20px',
+        border: '1px solid #fff'
     }
 });
 
@@ -76,31 +91,18 @@ class CardLayout extends Component {
             children: childrenProp,
             title,
             titleCard,
-            action,
-            loading,
+            progressbar,
             onClick = null,
-            cohortDetails,
-            cardHeaderStyle = ''
         } = this.props;
         let children = childrenProp;
         let isDivider = title || titleCard;
         return (
-            <Card className={classes.card} onClick={onClick}>
-                {title && (
-                    <CardContent className={cardHeaderStyle}>
-                        <div className={cohortDetails}>
-                            <div className={classes.uploadTitleStyle}>{title}</div>
-                        </div>
-                        {loading && <CircularProgress />}
-                        {action}
-                    </CardContent>
-                )}
-                {titleCard && (
-                    <CardContent className={cardHeaderStyle}>{titleCard}</CardContent>
-                )}
+            <React.Fragment>
+                <Card className={progressbar ? classes.progressStyle : classes.card} onClick={onClick}>
                 {isDivider && <Divider light />}
                 {children}
-            </Card>
+             </Card>
+            </React.Fragment>
         );
     }
 }

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import CardLayout from '../Components/CardLayout';
 import Button from '@material-ui/core/Button';
 import '../Styles/InvestmentCard.css'
+import InvestmentCard from './InvestmentCard'
 
 
 class AddRequisite extends Component {
@@ -9,11 +10,26 @@ class AddRequisite extends Component {
         super(props);
     }
   
+    changeProgressBar = () => {
+        const numb = document.querySelector(".numb")
+        let counter=0;
+        console.log("numb",numb)
+        setInterval(()=>{
+            if(counter===100)
+            {
+                clearInterval();
+            }
+            else{
+                counter+=1;
+                // numb.textContent = counter + "%";
+            }
+        },200)
+    }
 
     render() {
-
         return (
             <React.Fragment>
+                <InvestmentCard/>
                 <CardLayout >
                     <div className="cardStyle">
                         <div className="combineLabelStyle">
@@ -29,7 +45,6 @@ class AddRequisite extends Component {
                         </div>
                     </div>
                 </CardLayout>
-             
             </React.Fragment>
         );
     }
