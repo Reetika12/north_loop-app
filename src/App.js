@@ -1,9 +1,10 @@
 import InvestmentCard from './Container/InvestmentCard'
-
+import FreeAccessCard from './Container/FreeAccessCard'
 function App() {
   return (
     <div className="App">
-      < InvestmentCard/>
+      <FreeAccessCard/>
+      {/* < InvestmentCard/> */}
     </div>
   );
 }
