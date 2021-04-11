@@ -3,32 +3,18 @@ import CardLayout from '../Components/CardLayout';
 import Button from '@material-ui/core/Button';
 import '../Styles/InvestmentCard.css'
 import InvestmentCard from './InvestmentCard'
-
+import BestMutualFundCard from './BestMutualFundCard'
 
 class AddRequisite extends Component {
     constructor(props) {
         super(props);
     }
   
-    changeProgressBar = () => {
-        const numb = document.querySelector(".numb")
-        let counter=0;
-        console.log("numb",numb)
-        setInterval(()=>{
-            if(counter===100)
-            {
-                clearInterval();
-            }
-            else{
-                counter+=1;
-                // numb.textContent = counter + "%";
-            }
-        },200)
-    }
 
     render() {
         return (
             <React.Fragment>
+                <BestMutualFundCard/>
                 <InvestmentCard/>
                 <CardLayout >
                     <div className="cardStyle">

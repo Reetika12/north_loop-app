@@ -1,27 +1,62 @@
 import React, { Component } from 'react'
 import CardLayout from '../Components/CardLayout';
 import Button from '@material-ui/core/Button';
+import { PieChart, Pie, Cell } from 'recharts';
 import '../Styles/InvestmentCard.css'
 
+
 class InvestmentCard extends Component {
+   
+    data02 = [
+        { name: 'Equity', value: 13, color: "#FA8072" },
+        { name: 'Cash', value: 2, color: "#6495ED" }
+    ]
+
+    renderLegends = (data, index, color) => {
+        return (
+            <div className="block" key={index}>
+                <div className="box">
+                    <div className="circle" style={{ backgroundColor: `${color}` }}>
+                    </div>
+                    <div className="dataBox">
+                        <div className="countText">
+                            {data.name}
+                        </div>
+                        <div>
+                            {(data.value * 100 / 15).toFixed()}%
+                        </div>
+                    </div>
+                </div>
+            </div>
+        )
+    }
     render() {
+        let { classes } = this.props
         return (
             <div >
                 <CardLayout progressbar >
-                    <div className="trackcard">
-                        <div className="circular">
-                            <div className="inner"></div>
-                            <div className="numb" id="num" >100%</div>
-                            <div className="circle">
-                                <div className="bar left">
-                                    <div className="progress">
-                                    </div>
-                                </div>
-                                <div className="bar right">
-                                    <div className="progress">
-                                    </div>
-                                </div>
-                            </div>
+                    <div className="commonParentStyle">
+                        <PieChart width={200} height={200}>
+                            <Pie
+                                data={this.data02}
+                                cx={90}
+                                cy={100}
+                                innerRadius={45}
+                                outerRadius={80}
+                                fill="#8884d8"
+                                dataKey="value"
+                            >
+                                {
+                                    this.data02.map((entry, index) => <Cell key={`cell-${index}`} fill={entry.color} />)
+                                }
+                            </Pie>
+                        </PieChart>
+                        <div className="legendsBox">
+                            {
+                                this.data02.map((pieData, index) => {
+                                    return this.renderLegends(pieData, index, pieData.color, classes)
+                                })
+                            }
                         </div>
                     </div>
                     <div className="trackInvestment">

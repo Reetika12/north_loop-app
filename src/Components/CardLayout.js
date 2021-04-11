@@ -4,11 +4,8 @@ import React, { Component } from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import Divider from '@material-ui/core/Divider';
 import Card from '@material-ui/core/Card';
-import CardContent from '@material-ui/core/CardContent';
-import CircularProgress from '@material-ui/core/CircularProgress';
 import compose from 'recompose/compose';
 import withWidth from '@material-ui/core/withWidth';
-import { requirePropFactory } from '@material-ui/core';
 
 const styleSheet = (theme) => ({
     content: theme.mixins.gutters({
@@ -45,9 +42,11 @@ const styleSheet = (theme) => ({
         fontWeight: '500',
         lineHeight: 1.5
     },
+    popupCard:{
+        width:'500px',
+        height:'200px'
+    },
     card: {
-        // boxShadow: '0 0 0.5em 0 rgba(236, 236, 236, 0.5)',
-        // maxHeight: '100%',
         marginTop: '80px',
         backgroundColor: '#b266b9',
         flex: 1,
@@ -59,16 +58,13 @@ const styleSheet = (theme) => ({
         borderRadius: '20px'
     },
     progressStyle:{
-        // boxShadow: '0 0 0.5em 0 rgba(236, 236, 236, 0.5)',
-        // maxHeight: '100%',
-        overflow: 'auto',
         marginTop: '150px',
         backgroundColor: 'ghostwhite',
         flex: 1,
         margin: '50px 50px',
         display: 'flex',
         flexDirection: 'row',
-        // alignItems: 'center',
+        alignItems: 'center',
         height: '300px',
         borderRadius: '20px',
         border: '1px solid #fff'
@@ -92,6 +88,7 @@ class CardLayout extends Component {
             title,
             titleCard,
             progressbar,
+            popup,
             onClick = null,
         } = this.props;
         let children = childrenProp;
@@ -99,9 +96,9 @@ class CardLayout extends Component {
         return (
             <React.Fragment>
                 <Card className={progressbar ? classes.progressStyle : classes.card} onClick={onClick}>
-                {isDivider && <Divider light />}
-                {children}
-             </Card>
+                    {isDivider && <Divider light />}
+                    {children}
+               </Card>
             </React.Fragment>
         );
     }
