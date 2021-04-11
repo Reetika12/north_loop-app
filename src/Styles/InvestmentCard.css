@@ -105,3 +105,12 @@
     display: flex;
     margin: 100px 150px;
   }
+  .safetyCard{
+    padding: 20px 250px;
+    background-color: #32CD32;
+  }
+  .safetyTitle{
+      font-size: 25px;
+      font-weight: 600;
+      color:#fff;
+  }

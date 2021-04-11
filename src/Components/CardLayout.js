@@ -46,6 +46,17 @@ const styleSheet = (theme) => ({
         width:'500px',
         height:'200px'
     },
+    popUp:{
+        marginTop: '80px',
+        backgroundColor: '#b266b9',
+        flex: 1,
+        margin: '50px 50px',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        height: '300px',
+        borderRadius: '20px'
+    },
     card: {
         marginTop: '80px',
         backgroundColor: '#b266b9',
@@ -60,6 +71,18 @@ const styleSheet = (theme) => ({
     progressStyle:{
         marginTop: '150px',
         backgroundColor: 'ghostwhite',
+        flex: 1,
+        margin: '50px 50px',
+        display: 'flex',
+        flexDirection: 'row',
+        alignItems: 'center',
+        height: '300px',
+        borderRadius: '20px',
+        border: '1px solid #fff'
+    },
+    safety:{
+        marginTop: '150px',
+        backgroundColor: '#32CD32',
         flex: 1,
         margin: '50px 50px',
         display: 'flex',
@@ -88,6 +111,7 @@ class CardLayout extends Component {
             title,
             titleCard,
             progressbar,
+            safety,
             popup,
             onClick = null,
         } = this.props;
@@ -95,7 +119,7 @@ class CardLayout extends Component {
         let isDivider = title || titleCard;
         return (
             <React.Fragment>
-                <Card className={progressbar ? classes.progressStyle : classes.card} onClick={onClick}>
+                <Card className={progressbar ? classes.progressStyle : safety ? classes.safety : popup ? classes.popUp: classes.card} onClick={onClick}>
                     {isDivider && <Divider light />}
                     {children}
                </Card>

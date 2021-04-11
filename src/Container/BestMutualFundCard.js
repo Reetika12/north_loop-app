@@ -7,7 +7,7 @@ class BestMutualFundCard extends Component {
     render() {
         return (
             <div >
-                <CardLayout >
+                <CardLayout popup>
                     <div className="investInMutual">
                         <div className="mutualfindTitle">
                             Invest in the best

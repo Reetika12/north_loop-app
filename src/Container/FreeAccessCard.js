@@ -4,7 +4,7 @@ import Button from '@material-ui/core/Button';
 import '../Styles/InvestmentCard.css'
 import InvestmentCard from './InvestmentCard'
 import BestMutualFundCard from './BestMutualFundCard'
-
+import SafetyGurantyCard from './SafetyGurantyCard'
 class AddRequisite extends Component {
     constructor(props) {
         super(props);
@@ -14,6 +14,7 @@ class AddRequisite extends Component {
     render() {
         return (
             <React.Fragment>
+                <SafetyGurantyCard />
                 <BestMutualFundCard/>
                 <InvestmentCard/>
                 <CardLayout >
