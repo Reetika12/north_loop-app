@@ -5,13 +5,19 @@ import '../Styles/InvestmentCard.css'
 import InvestmentCard from './InvestmentCard'
 import BestMutualFundCard from './BestMutualFundCard'
 import SafetyGurantyCard from './SafetyGurantyCard'
-class AddRequisite extends Component {
+import NorthLoopWayCard from './NorthLoopWayCard'
+import MutualFundCard from './MutualFundCard'
+
+
+class ParentCard extends Component {
 
     render() {
         return (
             <React.Fragment>
+                <MutualFundCard/>
+                <BestMutualFundCard />
+                <NorthLoopWayCard/>
                 <SafetyGurantyCard />
-                <BestMutualFundCard/>
                 <InvestmentCard/>
                 <CardLayout >
                     <div className="cardStyle">
@@ -34,4 +40,4 @@ class AddRequisite extends Component {
 }
 
 
-export default AddRequisite
+export default ParentCard

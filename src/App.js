@@ -1,8 +1,9 @@
-import FreeAccessCard from './Container/FreeAccessCard'
+import ParentCard from './Container/ParentCard'
+
 function App() {
   return (
     <div className="App">
-      <FreeAccessCard />
+      <ParentCard />
     </div>
   );
 }

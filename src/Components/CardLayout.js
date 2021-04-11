@@ -51,7 +51,7 @@ const styleSheet = (theme) => ({
         backgroundColor: '#b266b9',
         justifyContent: 'space-evenly',
         flex: 1,
-        margin: '50px 50px',
+        margin: '0px 50px',
         display: 'flex',
         flexDirection: 'row',
         alignItems: 'center',
@@ -70,8 +70,8 @@ const styleSheet = (theme) => ({
         borderRadius: '20px'
     },
     progressStyle:{
-        marginTop: '150px',
-        backgroundColor: 'ghostwhite',
+        marginTop: '80px',
+        backgroundColor: '#fff',
         flex: 1,
         margin: '50px 50px',
         display: 'flex',
