@@ -49,10 +49,11 @@ const styleSheet = (theme) => ({
     popUp:{
         marginTop: '80px',
         backgroundColor: '#b266b9',
+        justifyContent: 'space-evenly',
         flex: 1,
         margin: '50px 50px',
         display: 'flex',
-        flexDirection: 'column',
+        flexDirection: 'row',
         alignItems: 'center',
         height: '300px',
         borderRadius: '20px'

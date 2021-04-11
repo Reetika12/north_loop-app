@@ -6,10 +6,6 @@ import InvestmentCard from './InvestmentCard'
 import BestMutualFundCard from './BestMutualFundCard'
 import SafetyGurantyCard from './SafetyGurantyCard'
 class AddRequisite extends Component {
-    constructor(props) {
-        super(props);
-    }
-  
 
     render() {
         return (
